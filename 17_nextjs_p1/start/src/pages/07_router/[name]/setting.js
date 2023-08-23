@@ -1,5 +1,10 @@
-// This file is visible by visiting https://localhost:3000/07_router/a/setting
+export default function Setting({ query }) {
+    return <h1>{ query.name }</h1>
+}
 
-export default function Setting() {
-    return <h1>[name]/setting.js</h1>
+// set function getServerSideProps(Funciton name must be exactly the same)
+export async function getServerSideProps({ query }) {
+    return {
+        props: { query }
+    }
 }
