@@ -4,7 +4,7 @@ export default function Setting({ query }) {
     const router = useRouter();
     console.log(query);
     const clickHandler = () => {
-        router.replace('/', 'dummy-url') // clickHandler Triggers to replace / with dummy-url
+        router.back() // clickHandler Triggers to replace / with dummy-url
     }
     return (
         <>
