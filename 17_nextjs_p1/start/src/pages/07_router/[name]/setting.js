@@ -2,8 +2,16 @@ import { useRouter } from "next/router"
 
 export default function Setting({ query }) {
     const router = useRouter();
-    console.log(router);
-    return <h1>Get name from router: { router.query.name }</h1>
+    console.log(query);
+    const clickHandler = () => {
+        router.push('/', 'dummy-url') // clickHandler Triggers to replace / with dummy-url
+    }
+    return (
+        <>
+            <h1>Get name from router: { router.query.name }</h1>
+            <button onClick={clickHandler}>Screen Transition by Action</button>
+        </>
+    )
 }
 
 export async function getServerSideProps({ query }) {
